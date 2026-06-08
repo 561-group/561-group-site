@@ -1,0 +1,62 @@
+import process from "node:process";
+import { pathToFileURL } from "node:url";
+
+import { installGracefulShutdown, start, type StartResult } from "@561-group/web-server";
+
+import { create561GroupSiteApp } from "./index.ts";
+
+export type Serve561GroupSiteOptions = Readonly<{
+  host?: string;
+  port?: number;
+  log?: (line: string) => void;
+}>;
+
+export type Serve561GroupSiteResult = StartResult & Readonly<{
+  host: string;
+}>;
+
+const DEFAULT_HOST = "127.0.0.1";
+const DEFAULT_PORT = 18_788;
+
+export function serve561GroupSiteOptionsFromEnv(): Required<Omit<Serve561GroupSiteOptions, "log">> {
+  return {
+    host: process.env.SITE_561_GROUP_HOST ?? process.env.HOST ?? DEFAULT_HOST,
+    port: envPort() ?? DEFAULT_PORT,
+  };
+}
+
+export async function serve561GroupSite(options: Serve561GroupSiteOptions = {}): Promise<Serve561GroupSiteResult> {
+  const envOptions = serve561GroupSiteOptionsFromEnv();
+  const host = options.host ?? envOptions.host;
+  const port = options.port ?? envOptions.port;
+  const running = await start(create561GroupSiteApp(), { host, port });
+
+  installGracefulShutdown(running, {
+    onClosed: () => options.log?.("561 Group site stopped"),
+    onError: (error) => options.log?.(`561 Group site shutdown failed: ${error instanceof Error ? error.message : String(error)}`),
+  });
+
+  options.log?.(`561 Group site listening at https://561.group/ on ${host}:${running.port}`);
+  return { ...running, host };
+}
+
+function envPort(): number | undefined {
+  const raw = process.env.SITE_561_GROUP_PORT ?? process.env.PORT;
+  if (raw === undefined) return undefined;
+  const parsed = Number.parseInt(raw, 10);
+  if (!Number.isInteger(parsed) || parsed <= 0 || parsed > 65_535) {
+    throw new Error(`Invalid SITE_561_GROUP_PORT: ${raw}`);
+  }
+  return parsed;
+}
+
+function isMain(): boolean {
+  return process.argv[1] !== undefined && import.meta.url === pathToFileURL(process.argv[1]).href;
+}
+
+if (isMain()) {
+  serve561GroupSite({ log: (line) => console.log(line) }).catch((error: unknown) => {
+    console.error(error instanceof Error ? error.message : error);
+    process.exitCode = 1;
+  });
+}
