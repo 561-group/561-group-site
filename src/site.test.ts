@@ -13,8 +13,8 @@ test("serves the 561.group apex HTML", async () => {
     assert.match(response.headers.get("content-type") ?? "", /^text\/html/);
     const body = await response.text();
     assert.match(body, /The 561 Group/);
-    assert.match(body, /farstone\.561\.group/);
-    assert.match(body, /swarm-playground\.561\.group/);
+    assert.match(body, /Black Liberation/);
+    assert.match(body, /Indigenous Sovereignty/);
   } finally {
     await running.close();
   }
@@ -25,9 +25,9 @@ test("serves machine-readable site metadata", async () => {
   try {
     const response = await fetch(`http://127.0.0.1:${running.port}/site.json`);
     assert.equal(response.status, 200);
-    const body = await response.json() as { url?: unknown; service?: unknown };
+    const body = await response.json() as { url?: unknown; description?: unknown };
     assert.equal(body.url, "https://561.group/");
-    assert.ok(Array.isArray(body.service));
+    assert.equal(typeof body.description, "string");
   } finally {
     await running.close();
   }

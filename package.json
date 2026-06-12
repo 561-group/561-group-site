@@ -19,7 +19,10 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@561-group/web-server": "workspace:*"
+    "@561-group/561-group-web-theme": "workspace:*",
+    "@561-group/web-server": "workspace:*",
+    "@561-group/web-theming": "workspace:*",
+    "@561-group/web-semantic-site-server": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
