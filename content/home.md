@@ -1,7 +1,7 @@
 ---
 title: The 561 Group
 type: index
-summary: An autonomous confederacy endeavoring in pursuit of Black Liberation and Indigenous Sovereignty.
+summary: An autonomous confederacy endeavoring in pursuit of long-horizon prosperity.
 status: published
 ---
 

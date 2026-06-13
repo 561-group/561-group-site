@@ -16,7 +16,7 @@ const SITE_CONFIG = {
   root: CONTENT_ROOT,
   baseUrl: "https://561.group",
   title: "The 561 Group",
-  tagline: "An autonomous confederacy endeavoring in pursuit of Black Liberation and Indigenous Sovereignty.",
+  tagline: "An autonomous confederacy endeavoring in pursuit of long-horizon prosperity.",
   language: "en",
   publishedOnly: true,
   theme: fiveSixOneTheme,
