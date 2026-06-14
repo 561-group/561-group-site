@@ -5,7 +5,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { start, installGracefulShutdown, type StartResult } from "@emsenn/web-server";
 import { buildApp, markdownDirectoryReader, watchContent } from "@561-group/web-semantic-site-server";
 import type { FSWatcher } from "node:fs";
-import { fiveSixOneTheme } from "@561-group/561-group-web-theme";
+import { fiveSixOneTheme } from "@emsenn/561-group-website-theme";
 
 const CONTENT_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "content");
 const DEFAULT_HOST = "127.0.0.1";

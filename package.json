@@ -19,7 +19,7 @@
     "./package.json": "./package.json"
   },
   "dependencies": {
-    "@561-group/561-group-web-theme": "workspace:*",
+    "@emsenn/561-group-website-theme": "workspace:*",
     "@emsenn/web-server": "workspace:*",
     "@561-group/web-theming": "workspace:*",
     "@561-group/web-semantic-site-server": "workspace:*"
