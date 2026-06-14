@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@561-group/561-group-web-theme": "workspace:*",
-    "@emsenn/http-holography": "workspace:*",
+    "@emsenn/web-server": "workspace:*",
     "@561-group/web-theming": "workspace:*",
     "@561-group/web-semantic-site-server": "workspace:*"
   },
