@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
 
-import { start } from "@561-group/web-server";
+import { start } from "@emsenn/http-holography";
 
 import { create561GroupSiteApp } from "./index.ts";
 

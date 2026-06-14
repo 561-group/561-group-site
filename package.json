@@ -20,7 +20,7 @@
   },
   "dependencies": {
     "@561-group/561-group-web-theme": "workspace:*",
-    "@561-group/web-server": "workspace:*",
+    "@emsenn/http-holography": "workspace:*",
     "@561-group/web-theming": "workspace:*",
     "@561-group/web-semantic-site-server": "workspace:*"
   },
@@ -28,13 +28,5 @@
     "@types/node": "^22.0.0",
     "typescript": "^5.8.0"
   },
-  "sideEffects": false,
-  "561:serve": {
-    "domain": "561.group",
-    "serviceName": "561-group-site",
-    "kind": "proxy",
-    "port": 18788,
-    "sse": false,
-    "ws": false
-  }
+  "sideEffects": false
 }
