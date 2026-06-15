@@ -1,5 +1,5 @@
 {
-  "name": "@561-group/561-group-site",
+  "name": "@emsenn/561-group-site",
   "version": "0.0.1",
   "private": true,
   "type": "module",
@@ -20,9 +20,7 @@
   },
   "dependencies": {
     "@emsenn/561-group-website-theme": "workspace:*",
-    "@emsenn/web-server": "workspace:*",
-    "@561-group/web-theming": "workspace:*",
-    "@561-group/web-semantic-site-server": "workspace:*"
+    "@emsenn/web": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

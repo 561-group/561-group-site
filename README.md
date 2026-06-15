@@ -10,4 +10,6 @@ pnpm check
 pnpm serve
 ```
 
-The package declares its public service in `package.json` under `561:serve`; root deployment tooling renders the Caddy route and user systemd unit from that declaration.
+Deployment on the box is hand-maintained: a systemd `--user` unit
+(`561-group-site.service`) runs `pnpm serve` on a loopback port, and Caddy
+(`~/.config/caddy/Caddyfile`) reverse-proxies `561.group` to it.
