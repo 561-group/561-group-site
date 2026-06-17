@@ -11,7 +11,8 @@
   "scripts": {
     "serve": "node src/server.ts",
     "test": "node --test \"src/**/*.test.ts\"",
-    "check": "tsc --noEmit"
+    "check": "tsc --noEmit",
+    "verify": "pnpm run check && pnpm run test"
   },
   "exports": {
     ".": "./src/index.ts",
@@ -20,7 +21,8 @@
   },
   "dependencies": {
     "@emsenn/561-group-website-theme": "workspace:*",
-    "@emsenn/web": "workspace:*"
+    "@emsenn/computing-with-the-web": "workspace:*",
+    "@emsenn/http-server": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",

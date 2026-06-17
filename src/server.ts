@@ -2,8 +2,8 @@ import process from "node:process";
 import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
-import { start, installGracefulShutdown, type StartResult } from "@emsenn/web/server";
-import { buildApp, markdownDirectoryReader, watchContent } from "@emsenn/web/semantic-site-server";
+import { start, installGracefulShutdown, type StartResult } from "@emsenn/http-server";
+import { buildApp, markdownDirectoryReader, watchContent } from "@emsenn/computing-with-the-web/semantic-site-server";
 import type { FSWatcher } from "node:fs";
 import { fiveSixOneTheme } from "@emsenn/561-group-website-theme";
 
