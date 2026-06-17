@@ -10,6 +10,4 @@ pnpm check
 pnpm serve
 ```
 
-Deployment on the box is hand-maintained: a systemd `--user` unit
-(`561-group-site.service`) runs `pnpm serve` on a loopback port, and Caddy
-(`~/.config/caddy/Caddyfile`) reverse-proxies `561.group` to it.
+Deployment on the box is hand-maintained: a systemd `--user` unit (`561-group-site.service`) runs `pnpm serve` on a loopback port, and Caddy (`~/.config/caddy/Caddyfile`) reverse-proxies `561.group` to it.
