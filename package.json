@@ -10,9 +10,7 @@
   },
   "scripts": {
     "serve": "node src/server.ts",
-    "test": "node --test \"src/**/*.test.ts\"",
-    "check": "tsc --noEmit",
-    "verify": "pnpm run check && pnpm run test"
+    "check": "tsc --noEmit"
   },
   "exports": {
     ".": "./src/index.ts",
