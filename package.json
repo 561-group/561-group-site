@@ -20,7 +20,7 @@
   "dependencies": {
     "@emsenn/561-group-website-theme": "workspace:*",
     "@emsenn/http-server": "workspace:*",
-    "@emsenn/computing-with-the-semantic-web": "workspace:*"
+    "@emsenn/organizing-with-the-semantic-web": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
