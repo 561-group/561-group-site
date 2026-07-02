@@ -3,7 +3,7 @@ import { dirname, join } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 
 import { start, installGracefulShutdown, type StartResult } from "@emsenn/http-server";
-import { buildApp, markdownDirectoryReader, watchContent } from "@emsenn/organizing-with-the-semantic-web/semantic-site-server";
+import { buildApp, markdownDirectoryReader, watchContent } from "@emsenn/computing-with-the-semantic-web/semantic-site-server";
 import type { FSWatcher } from "node:fs";
 import { fiveSixOneTheme } from "@emsenn/561-group-website-theme";
 
