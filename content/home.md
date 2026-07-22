@@ -1,13 +1,14 @@
 ---
 title: The 561 Group
 type: index
-summary: An autonomous confederacy endeavoring in pursuit of long-horizon prosperity.
+summary: An autonomous confederacy endeavoring in pursuit of Black Liberation, Indigenous Sovereignty, and long-horizon prosperity.
 status: published
 ---
 
 The 561 Group is the public facade of a Union of independent enterprises that
 research, design, and operate technical infrastructure for long-horizon
-autonomy, collective intelligence, and strategic prosperity.
+autonomy, collective intelligence, Black Liberation, Indigenous Sovereignty,
+and strategic prosperity.
 
 We publish reusable knowledge and source code under the
 [561-group GitHub organization](https://github.com/561-group). We operate and

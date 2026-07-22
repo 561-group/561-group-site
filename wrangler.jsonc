@@ -1,0 +1,10 @@
+{
+  "name": "561-group-site",
+  "main": "src/worker.mjs",
+  "compatibility_date": "2026-07-22",
+  "workers_dev": false,
+  "routes": [
+    { "pattern": "561.group/*", "zone_name": "561.group" },
+    { "pattern": "market.561.group", "custom_domain": true }
+  ]
+}
