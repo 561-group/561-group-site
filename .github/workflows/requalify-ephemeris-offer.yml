@@ -1,0 +1,23 @@
+name: Requalify live Ephemeris offer
+
+on:
+  schedule:
+    - cron: "17 */6 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "scripts/verify-ephemeris-offer.mjs"
+      - "test/verify-ephemeris-offer.test.mjs"
+      - ".github/workflows/requalify-ephemeris-offer.yml"
+
+jobs:
+  assay:
+    runs-on: ubuntu-latest
+    permissions: {}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node --test test/verify-ephemeris-offer.test.mjs
+      - run: node scripts/verify-ephemeris-offer.mjs

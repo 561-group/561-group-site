@@ -5,4 +5,40 @@ summary: An autonomous confederacy endeavoring in pursuit of long-horizon prospe
 status: published
 ---
 
-The 561 Group is a private organization which researches, designs, and deploys technical infrastructure for long-horizon autonomy, collective intelligence, and strategic prosperity through political, financial, and economic volatility.
+The 561 Group is the public facade of a Union of independent enterprises that
+research, design, and operate technical infrastructure for long-horizon
+autonomy, collective intelligence, and strategic prosperity.
+
+We publish reusable knowledge and source code under the
+[561-group GitHub organization](https://github.com/561-group). We operate and
+sell the scarce work that makes it reliable in the world: paid nodes, measured
+execution, integration, assurance, and support. Open source is the common
+layer on which accountable services compete.
+
+## Services
+
+[Market.561.group](https://market.561.group/) is our commercial catalog. Each
+offer identifies its owning enterprise, public source, endpoint, price, chain
+policy, and evidence status. The first qualified product line pairs the
+Apache-2.0 x402 boundary reference with the separately operated Paid Ephemeris
+Gateway: free source for anyone to inspect and run, and a pay-to-use node for
+customers who want operated measurement, provenance, and a
+settlement-recording boundary.
+
+## Sponsor the work
+
+Sponsorship funds public research, mathematical publications, documentation,
+independent verification, and operating capacity. It is support for a public
+commons, not hidden access or control over a sovereign enterprise's findings.
+The market carries the published sponsorship terms and recipient policy. The
+current route accepts Base USDC (`eip155:8453`) at
+`0x42F72C0a340A4A55C082Fe42483e87691D2bff64`; it is a sponsorship transfer,
+not payment for a service response.
+
+## Web-borne Union
+
+The 561 Group is the first public realization of the Union's operating model:
+enterprises publish their own source and offers, customers choose them through
+explicit contracts, x402 settles paid HTTP crossings, and each enterprise
+keeps its own evidence. The apex makes the federation legible; it does not
+turn the federation into a single ambient platform.

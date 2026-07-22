@@ -1,16 +1,18 @@
 {
-  "name": "@emsenn/561-group-site",
-  "version": "0.0.1",
+  "name": "@561-group/site",
+  "version": "0.1.0",
   "private": true,
   "type": "module",
   "description": "Deployable 561.group apex site.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/emsenn/561-group-site.git"
+    "url": "git+https://github.com/561-group/561-group-site.git"
   },
   "scripts": {
     "serve": "node src/server.ts",
-    "check": "tsc --noEmit"
+    "test": "node --test test/verify-ephemeris-offer.test.mjs",
+    "check": "tsc --noEmit && node --test test/verify-ephemeris-offer.test.mjs",
+    "verify:ephemeris-offer": "node scripts/verify-ephemeris-offer.mjs"
   },
   "exports": {
     ".": "./src/index.ts",
@@ -20,7 +22,7 @@
   "dependencies": {
     "@emsenn/561-group-website-theme": "workspace:*",
     "@emsenn/http-server": "workspace:*",
-    "@emsenn/computing-with-the-semantic-web": "workspace:*"
+    "@emsenn/organizing-with-the-semantic-web": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^22.0.0",
@@ -28,6 +30,9 @@
   },
   "sideEffects": false,
   "keywords": [
-    "sovereign-state-enterprise"
+    "sovereign-state-enterprise",
+    "open-source",
+    "x402",
+    "sponsorship"
   ]
 }
