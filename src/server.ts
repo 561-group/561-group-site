@@ -11,11 +11,11 @@ const CONTENT_ROOT = join(dirname(fileURLToPath(import.meta.url)), "..", "conten
 const DEFAULT_HOST = "127.0.0.1";
 const DEFAULT_PORT = 18_788;
 
-const SITE_CONFIG = {
+export const SITE_CONFIG = {
   root: CONTENT_ROOT,
   baseUrl: "https://561.group",
   title: "The 561 Group",
-  tagline: "An autonomous confederacy endeavoring in pursuit of long-horizon prosperity.",
+  tagline: "An autonomous confederacy endeavoring in pursuit of Black Liberation, Indigenous Sovereignty, and long-horizon prosperity.",
   language: "en",
   publishedOnly: true,
   theme: fiveSixOneTheme,

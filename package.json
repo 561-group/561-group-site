@@ -9,6 +9,7 @@
     "url": "git+https://github.com/561-group/561-group-site.git"
   },
   "scripts": {
+    "build:worker": "node scripts/build-worker.mjs",
     "serve": "node src/server.ts",
     "test": "node --test test/verify-ephemeris-offer.test.mjs",
     "check": "tsc --noEmit && node --test test/verify-ephemeris-offer.test.mjs",
