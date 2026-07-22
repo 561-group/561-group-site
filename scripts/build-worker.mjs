@@ -11,7 +11,15 @@ import { SITE_CONFIG } from "../src/server.ts";
 
 const siteRoot = join(dirname(fileURLToPath(import.meta.url)), "..");
 const projectionRoot = join(siteRoot, ".tmp", "worker-projection");
-const app = buildApp(markdownDirectoryReader(), SITE_CONFIG);
+const releaseInstant = "2026-07-22T22:56:15.000Z";
+const liveReader = markdownDirectoryReader();
+const projectionReader = Object.freeze({
+  ...liveReader,
+  settle(root, subject) {
+    return Object.freeze({ ...liveReader.settle(root, subject), t: releaseInstant });
+  },
+});
+const app = buildApp(projectionReader, SITE_CONFIG);
 
 await projectApp(app, projectionRoot, {
   baseUrl: SITE_CONFIG.baseUrl,
