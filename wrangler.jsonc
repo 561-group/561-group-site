@@ -1,0 +1,15 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "561-group-site",
+  "compatibility_date": "2026-08-04",
+  "workers_dev": false,
+  "routes": [
+    {
+      "pattern": "561.group/*",
+      "zone_name": "561.group"
+    }
+  ],
+  "assets": {
+    "directory": "."
+  }
+}
