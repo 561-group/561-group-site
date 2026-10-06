@@ -63,6 +63,9 @@
         text-wrap: balance;
       }
       p { max-width: var(--measure); font-size: 1.0625rem; text-wrap: pretty; }
+      p + p { margin-top: 1.2rem; }
+      a { color: inherit; text-underline-offset: .2em; }
+      a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
 
       @media (max-width: 880px) {
         :root { --gutter: 24px; }
@@ -78,6 +81,7 @@
     <main>
       <h1>The 561 Group</h1>
       <p>The 561 Group is a private organization which researches, designs, and deploys technical infrastructure for long-horizon autonomy, collective intelligence, and strategic prosperity through political, financial, and economic volatility.</p>
+      <p><a href="/contact/">File an issue, complaint, requirement, or idea</a></p>
     </main>
   </body>
 </html>
