@@ -1,4 +1,7 @@
+User-agent: OAI-SearchBot
+Allow: /
+
 User-agent: *
 Allow: /
 
-Sitemap: https://561.group/sitemap.txt
+Sitemap: https://561.group/sitemap.xml
