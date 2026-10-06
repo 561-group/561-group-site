@@ -17,6 +17,13 @@
       a { color: inherit; text-underline-offset: .2em; }
       a:focus-visible { outline: 3px solid currentColor; outline-offset: 4px; }
       .action { display: inline-block; border: 1px solid; padding: .6rem 1rem; margin: .5rem 0; }
+      label { display: block; margin-top: 1rem; font-weight: bold; }
+      input, select, textarea, button { font: inherit; }
+      input, select, textarea { width: 100%; padding: .5rem; color: inherit; background: transparent; border: 1px solid; }
+      textarea { min-height: 7rem; resize: vertical; }
+      button { color: inherit; background: transparent; cursor: pointer; }
+      [hidden] { display: none; }
+      .hint { margin-top: .3rem; font-size: .95rem; }
     </style>
   </head>
   <body>
@@ -30,11 +37,62 @@
       <p>A GitHub account is required. The submission and replies are public. The resulting issue URL is your reference: follow it, add corrections or evidence, and use it to check progress. If related work already exists, add to its thread.</p>
       <h2>File privately</h2>
       <p>For personal information, private client matters, security details, or other confidential material, use your existing private Group conversation or a private repository you are authorized to access. Say what is affected, what you need, and how you would recognize a satisfactory result. Ask for a reference and the receiving status.</p>
-      <p>If you do not have a GitHub account or a private Group conversation, use <a href="https://emsenn.net/contact/">the existing contact route</a>.</p>
+      <p>You can also file by email at <a href="mailto:emsenn@561.group?subject=%5B561%20Group%20intake%5D">emsenn@561.group</a>. No GitHub account or Group login is needed. The CTO reviews this submission queue alongside GitHub. Keep your email conversation as the reference for corrections and follow-up.</p>
+      <form id="private-intake" action="mailto:emsenn@561.group" method="post" enctype="text/plain">
+        <label for="submission-type">Submission type</label>
+        <select id="submission-type" name="submission-type">
+          <option>Issue</option><option>Complaint</option><option>Requirement</option><option>Idea</option><option>Question</option>
+        </select>
+        <label for="affected">Affected service or resource</label>
+        <input id="affected" name="affected" required>
+        <p class="hint">A name, link, location, or description is enough.</p>
+        <label for="need">What happened or what do you need?</label>
+        <textarea id="need" name="need" required></textarea>
+        <label for="conditions">What would a satisfactory outcome look like?</label>
+        <textarea id="conditions" name="conditions"></textarea>
+        <label for="evidence">Context and evidence</label>
+        <textarea id="evidence" name="evidence"></textarea>
+        <p class="hint">You can attach files when you send the email.</p>
+        <label for="urgency">Urgency</label>
+        <select id="urgency" name="urgency">
+          <option>Routine</option><option>Work blocked</option><option>Active harm</option>
+        </select>
+        <button class="action" type="submit">Prepare private email</button>
+      </form>
+      <section id="email-draft" hidden aria-live="polite">
+        <h3>Your email draft</h3>
+        <p>Review the text, then open your email app or copy it into your webmail. Send it to emsenn@561.group.</p>
+        <label for="email-subject">Subject</label>
+        <input id="email-subject" readonly>
+        <label for="email-text">Message</label>
+        <textarea id="email-text" readonly></textarea>
+        <a id="open-email" class="action">Open email app</a>
+        <p id="copy-email" hidden>Copy the message above into your email draft; it is too long to include reliably in an email link.</p>
+      </section>
+      <noscript><p>You can email the address above directly. Include the submission type, affected service, what you need, your satisfaction conditions, evidence, and urgency.</p></noscript>
+      <p>Other established ways to contact emsenn remain listed on <a href="https://emsenn.net/contact/">the contact page</a>.</p>
       <p>People with access to the Group's service system can also use <a href="https://cold-red-gate.561.group/play">the authenticated work board</a>. Sign in with your own identity.</p>
       <h2>What happens next</h2>
       <p>The CTO monitors public submissions and technical work across Group repositories, identifies the capable service and authorized actuator, and carries technical work through to a demonstrated result. Your original submission, evidence, and success conditions remain attached to the work as it moves.</p>
       <p>Filing records your need. Native receipt, a commitment to act, implementation, and your acceptance of the result are separate steps. An issue being closed alone does not prove the requested effect occurred.</p>
     </main>
+    <script>
+      const intake = document.getElementById('private-intake');
+      intake.addEventListener('submit', event => {
+        event.preventDefault();
+        const fields = [...new FormData(intake)];
+        const subject = `[561 Group intake] ${intake.elements['submission-type'].value}`;
+        const body = fields.map(([name, value]) => `${intake.querySelector(`label[for="${name}"]`).textContent}\n${value}`).join('\n\n');
+        document.getElementById('email-subject').value = subject;
+        document.getElementById('email-text').value = body;
+        const base = `mailto:emsenn@561.group?subject=${encodeURIComponent(subject)}`;
+        const complete = `${base}&body=${encodeURIComponent(body)}`;
+        const needsCopy = complete.length > 1800;
+        document.getElementById('open-email').href = needsCopy ? base : complete;
+        document.getElementById('copy-email').hidden = !needsCopy;
+        document.getElementById('email-draft').hidden = false;
+        document.getElementById('email-text').focus();
+      });
+    </script>
   </body>
 </html>
