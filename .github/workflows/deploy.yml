@@ -1,9 +1,13 @@
 name: Deploy 561.group
 
+# TEMPORARY CONSOLIDATION GATE
+#
+# Do not automatically publish every main-branch change while the 561 Group
+# web estate has multiple competing source/render/deploy implementations.
+# Production deployment is explicit until 561-group/561-group#51 settles a
+# single source → TUFTE render → deploy → public-witness chain for 561.group.
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 permissions:
   contents: read
