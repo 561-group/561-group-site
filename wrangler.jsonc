@@ -7,6 +7,10 @@
     {
       "pattern": "561.group/*",
       "zone_name": "561.group"
+    },
+    {
+      "pattern": "www.561.group/*",
+      "zone_name": "561.group"
     }
   ],
   "assets": {
